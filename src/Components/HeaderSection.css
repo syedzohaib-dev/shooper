@@ -1,0 +1,24 @@
+element.style {
+    display: none;
+}
+
+.tns-carousel .tns-nav {
+    padding-top: 0.875rem;
+    padding-bottom: 0.5rem;
+    text-align: center;
+}
+
+html * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+user agent stylesheet div {
+    display: block;
+}

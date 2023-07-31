@@ -1,0 +1,8 @@
+#Navi{
+    background-color:rgb(245, 177, 176);
+    position: absolute;
+    /* width: 100%; */
+    position: sticky;
+    top: 0;
+    
+}
