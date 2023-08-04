@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from "react";
 import { Route, Routes, Navigate } from 'react-router-dom';
 import NavigationBar from './Components/NavigationBar';
 import Home from './Pages/Home';
@@ -9,45 +9,44 @@ import Page404 from './Pages/Page404';
 import Category from './Pages/Category';
 import About from './Pages/About';
 import Footer from './Components/Footer';
-import ProductPage from './Pages/ProductPage';
-// import CartItem from "./Components/CartItems";
-// import { GlobalContext } from './context/login/Context';
-// import Cart from './Components/Cart';
-// import { useContext } from 'react';
+import { LoginRouteContext } from "./context/loginContext/LoginContext";
+import ProductPage from "./Pages/ProductPage";
+
 
 
 function App() {
-  const [user, setUser] = useState(false)
+  // const [user, setUser] = useState(true)
+  const { state } = useContext(LoginRouteContext)
+
   return (
     <>
 
       <NavigationBar />
 
       {
-        user
+        state.user ?
+          (
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/products" element={<Product />} />
+              <Route path="/productPage/:productID" element={<ProductPage />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+              {/* <Route path="/cart" element={<Cart />} /> */}
+              <Route path="/products/category/:categoryName" element={<Category />} />
+            </Routes>
+          ) : (
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/about" element={<About />} />
+              <Route path="*" element={<Navigate to="/login" replace={true} />} />
+            </Routes>
+          )}
+      <Footer />
 
-          ?
-            (
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/products" element={<Product />} />
-                <Route path="/products/:productID" element={<ProductPage />} />
-                <Route path="/about" element={<About />} />
-                {/* <Route path="/cart" element={<Cart />} /> */}
-                <Route path="/product/category/:categoryName" element={<Category />} />
-              
-              </Routes>
-            ) : (
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/signup" element={<Signup />} />
-                <Route path="/about" element={<About />} />
-                {/* <Route path="*" element={<Navigate to="/login" replace={true} />} /> */}
-              </Routes>
-            )}
-        <Footer />
-     
     </>
   );
 }

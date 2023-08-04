@@ -1,13 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext,useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import ReactStars from 'react-stars'
 import Swal from 'sweetalert2'
 import ImageSection from '../Components/ImageSection'
+import { CartContext } from "../context/cartContext/CartContext";
+
 
 
 
 export default function ProductPage() {
+
+    const { state, dispatch } = useContext(CartContext);
+
 
     const { productID } = useParams()
     const [product, setproduct] = useState({})
