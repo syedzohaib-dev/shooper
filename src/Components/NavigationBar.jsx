@@ -15,6 +15,7 @@ import { FaUserCircle, FaUserCheck } from "react-icons/fa";
 
 
 
+
 // function NavigationBar() {
 
 // const { state } = useContext(GlobalContext)
@@ -72,7 +73,7 @@ const Header = () => {
                                     Logout
                                 </Link>
                                 <span className="mx-3">
-                                    <FaUserCheck />Hi {user.username}
+                                    <FaUserCheck size={25} />Hi {user.name}
                                 </span>
                                 <Cart />
                             </>

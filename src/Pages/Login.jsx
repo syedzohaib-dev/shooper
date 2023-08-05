@@ -12,10 +12,10 @@ export default function Login() {
 
   const userName = localStorage.getItem("email")
     ? localStorage.getItem("email")
-    : "abc@gmail.com";
+    : "zohaib@gmail.com";
   const userPassword = localStorage.getItem("password")
     ? localStorage.getItem("password")
-    : "Tabeer123";
+    : "12345678";
 
   const getUserInfo = (e) => {
     e.preventDefault();
