@@ -24,7 +24,7 @@ import { FaUserCircle, FaUserCheck } from "react-icons/fa";
 // const { user } = state;
 
 const Header = () => {
-    const { state } = useContext(LoginRouteContext);
+    const { state, dispatch } = useContext(LoginRouteContext);
     const { user } = state;
     const [showCart, setShowCart] = useState(false);
 
@@ -51,7 +51,7 @@ const Header = () => {
                             navbarScroll
                         >
                             <Link className='nav-link' as={Link} to="/">Home</Link>
-                            <Link className='nav-link' as={Link} to="/Product">Product</Link>
+                            <Link className='nav-link' as={Link} to="/products">Product</Link>
                             <Link className='nav-link' as={Link} to="/Category">Category</Link>
                             <Link className='nav-link' as={Link} to="/About">About</Link>
 
@@ -69,11 +69,16 @@ const Header = () => {
                         </Link> */}
                         {user ? (
                             <>
-                                <Link as={Link} to="/logout">
+                                {/* <Link as={Link} to="/logout">
                                     Logout
-                                </Link>
+                                </Link> */}
+
+                                <button className="btn btn-outline-dark" onClick={()=> dispatch({type : "Logout"})}>
+                                    Logout
+                                </button>
+
                                 <span className="mx-3">
-                                    <FaUserCheck size={25} />Hi {user.name}
+                                    <FaUserCheck size={25} />Hi {user.email}
                                 </span>
                                 <Cart />
                             </>

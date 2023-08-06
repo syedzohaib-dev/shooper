@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CartContext } from "../context/cartContext/CartContext";
 
 export default function CartItems({ data }) {
+    const { state, dispatch } = useContext(CartContext);
+
+    const deleteItem = (id) => {
+        console.log(id);
+        dispatch({ type: "DELETE_ITEM", payload: id })
+    }
     return (
         <div className="card mb-3 shadow-sm">
             <div className="row g-0">
@@ -32,6 +39,7 @@ export default function CartItems({ data }) {
                                 Last updated 3 mins ago
                             </small>
                         </p>
+                        <button onClick={() => deleteItem(data.id)}>deleteItem</button>
                     </div>
                 </div>
             </div>

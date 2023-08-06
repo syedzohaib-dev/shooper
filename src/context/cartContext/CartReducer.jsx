@@ -5,6 +5,9 @@ export const reducer = (state, action) => {
 
         case "CLEAR_CART":
             return { ...state, cart: [] }
+        case "DELETE_ITEM":
+            console.log(action.payload);
+            return {...state, cart: state.cart.filter((item) => item.id !== action.payload)}
 
 
         default:

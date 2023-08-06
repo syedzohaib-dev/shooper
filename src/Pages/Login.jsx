@@ -10,12 +10,8 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const userName = localStorage.getItem("email")
-    ? localStorage.getItem("email")
-    : "zohaib@gmail.com";
-  const userPassword = localStorage.getItem("password")
-    ? localStorage.getItem("password")
-    : "12345678";
+  const userName = localStorage.getItem("email") ? localStorage.getItem("email") : "zohaib@gmail.com";
+  const userPassword = localStorage.getItem("password") ? localStorage.getItem("password") : "12345678";
 
   const getUserInfo = (e) => {
     e.preventDefault();
@@ -29,15 +25,22 @@ export default function Login() {
         'You Successfully logged In!',
         'success'
       );
-      dispatch({ type: "Login", payload: { email: userName, password: userPassword, username: "" } });
-      navigate("/ProductPage");
-    } else {
+
+
+      dispatch({ type: "Login", payload });
+      navigate("/products");
+    }
+
+
+    else {
       Swal.fire(
         'Invalid Email or Password!',
         'Try Again!',
         'error'
       );
     }
+
+
   };
   return (
     <div className="container log">

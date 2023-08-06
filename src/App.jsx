@@ -9,7 +9,7 @@ import Page404 from './Pages/Page404';
 import Category from './Pages/Category';
 import About from './Pages/About';
 import Footer from './Components/Footer';
-import { LoginRouteContext } from "./context/loginContext/LoginContext";
+import {LoginRouteContext} from './context/loginContext/LoginContext'
 import ProductPage from "./Pages/ProductPage";
 
 
@@ -22,6 +22,7 @@ function App() {
     <>
 
       <NavigationBar />
+      
 
       {
         state.user ?
@@ -34,15 +35,21 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               {/* <Route path="/cart" element={<Cart />} /> */}
-              <Route path="/products/category/:categoryName" element={<Category />} />
+              <Route path="/product/category/:categoryName" element={<Category />} />
             </Routes>
-          ) : (
+          )
+
+          :
+
+          (
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/about" element={<About />} />
               <Route path="*" element={<Navigate to="/login" replace={true} />} />
+              <Route path="/product/category/:categoryName" element={<Category />} />
+
             </Routes>
           )}
       <Footer />

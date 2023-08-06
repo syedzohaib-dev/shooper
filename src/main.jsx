@@ -4,7 +4,7 @@ import App from './App.jsx'
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter } from 'react-router-dom'
-import { LoginContext } from "./context/loginContext/LoginContext.jsx"
+import LoginContext from './context/loginContext/LoginContext.jsx';
 import CartProvider from './context/cartContext/CartContext.jsx'
 
 

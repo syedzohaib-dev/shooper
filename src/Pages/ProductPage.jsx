@@ -54,6 +54,7 @@ export default function ProductPage() {
         }
 
         console.log(payload)
+        dispatch({type:"ADD_TO_CART", payload})
 
         Swal.fire({
             title: 'Added to Cart!',
