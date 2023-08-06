@@ -44,7 +44,7 @@ function Cart() {
                     </Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
-                    {state.cart.map((val, key) => (
+                    {state?.cart?.map((val, key) => (
                         <CartItems key={key} data={val} />
                     ))}
                 </Offcanvas.Body>
