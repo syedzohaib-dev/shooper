@@ -100,7 +100,7 @@ export default function ProductPage() {
                 <div className="col-md-6">
 
                     {
-                        product?.images?.length > 0 && <ImageSection images={product.images} />
+                        product && product?.images?.length > 0 && <ImageSection images={product.images} />
                     }
 
                 </div>
