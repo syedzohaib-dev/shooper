@@ -8,7 +8,6 @@ import { CartContext } from "../context/cartContext/CartContext";
 
 
 
-
 export default function ProductPage() {
 
     const { state, dispatch } = useContext(CartContext);

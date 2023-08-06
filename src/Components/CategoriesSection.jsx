@@ -23,7 +23,7 @@ export default function CategoriesSection() {
       <marquee behavior="scroll" direction="right" scrollamount="12">SALE    SALE    SALE</marquee>
       </div>
       <div className="row">
-        {
+        { categories && 
           categories.map((val, key) =>
             <div className="col-md-3 py-5" key={key}>
               <Link className='text-decoration-none' to={`/product/category/${val}`}>
