@@ -27,7 +27,7 @@ export default function CartItems({ data }) {
                     <div className="card-body">
                         <div className="d-flex justify-content-between align-items-center mb-2">
                             <h6 className="card-title">
-                                {data.title.length > 20
+                                {data?.title?.length > 20
                                     ? data.title.slice(0, 20) + "..."
                                     : data.title}
                             </h6>

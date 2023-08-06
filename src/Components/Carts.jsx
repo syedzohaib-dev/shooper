@@ -27,7 +27,7 @@ function Cart() {
             <button type="button" onClick={() => setShow(true)} className="btn btn-dark position-relative">
                 <BsFillCartFill />
                 <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                    {state.cart.length}
+                    {state?.cart?.length}
                     <span className="visually-hidden">unread messages</span>
                 </span>
             </button>
