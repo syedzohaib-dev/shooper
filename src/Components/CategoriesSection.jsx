@@ -28,7 +28,7 @@ export default function CategoriesSection() {
       </div>
       <div className="row">
         {console.log(categories)}
-        {categories.length > 0 &&
+        {/* {categories.length > 0 &&
           categories.map((val, key) =>
             <div className="col-md-3 py-5" key={key}>
               <Link className='text-decoration-none' to={`/product/category/${val}`}>
@@ -40,7 +40,8 @@ export default function CategoriesSection() {
                 </Card>
               </Link>
             </div>)
-        }
+        } */}heeloo 
+
       </div>
     </div>
   )
